@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echo Learning Assistant</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="title">Echo</h1>
+            <p class="subtitle">Personalized Learning Assistant</p>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Video Library View -->
+            <div id="library-view" class="view active">
+                <div class="library-header">
+                    <h2>Your Learning Library</h2>
+                    <div class="library-stats">
+                        <span id="video-count">0 videos</span>
+                    </div>
+                </div>
+                
+                <div id="video-list" class="video-list">
+                    <!-- Video items will be dynamically inserted here -->
+                </div>
+                
+                <div id="empty-state" class="empty-state">
+                    <div class="empty-icon">📚</div>
+                    <h3>No videos yet</h3>
+                    <p>Visit a YouTube video and click "Add to Echo Library" to get started!</p>
+                </div>
+            </div>
+
+            <!-- Quiz View (Hidden by default) -->
+            <div id="quiz-view" class="view">
+                <div class="quiz-header">
+                    <button id="back-to-library" class="back-button">← Back to Library</button>
+                    <h2 id="quiz-title">Study Session</h2>
+                </div>
+
+                <!-- Summary Section -->
+                <div id="summary-section" class="summary-section">
+                    <h3>Summary</h3>
+                    <div id="summary-content" class="summary-content"></div>
+                </div>
+
+                <!-- Key Terms Section -->
+                <div id="key-terms-section" class="key-terms-section">
+                    <h3>Key Terms</h3>
+                    <div id="key-terms-content" class="key-terms-content"></div>
+                </div>
+
+                <!-- Quiz Section -->
+                <div id="quiz-section" class="quiz-section">
+                    <div class="quiz-progress">
+                        <span id="question-counter">Question 1 of 5</span>
+                        <div class="progress-bar">
+                            <div id="progress-fill" class="progress-fill"></div>
+                        </div>
+                    </div>
+
+                    <div id="question-container" class="question-container">
+                        <h3 id="question-text">Loading question...</h3>
+                        <div id="options-container" class="options-container">
+                            <!-- Options will be dynamically inserted here -->
+                        </div>
+                        <button id="submit-answer" class="submit-button" disabled>Submit Answer</button>
+                    </div>
+
+                    <div id="feedback-container" class="feedback-container hidden">
+                        <div id="feedback-text" class="feedback-text"></div>
+                        <button id="next-question" class="next-button">Next Question</button>
+                    </div>
+
+                    <div id="quiz-complete" class="quiz-complete hidden">
+                        <h3>Quiz Complete! 🎉</h3>
+                        <div id="final-score" class="final-score"></div>
+                        <div class="quiz-actions">
+                            <button id="retake-quiz" class="action-button">Retake Quiz</button>
+                            <button id="schedule-review" class="action-button primary">Schedule Review</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading State -->
+            <div id="loading-state" class="loading-state hidden">
+                <div class="loading-spinner"></div>
+                <p>Generating study materials...</p>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-links">
+                <button id="settings-button" class="footer-link">Settings</button>
+                <button id="help-button" class="footer-link">Help</button>
+            </div>
+        </footer>
+    </div>
+
+    <script src="ai.js"></script>
+    <script src="popup.js"></script>
+</body>
+</html>
+

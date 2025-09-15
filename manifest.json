@@ -1,0 +1,49 @@
+{
+  "manifest_version": 3,
+  "name": "Echo - Personalized Learning Assistant",
+  "version": "1.0.0",
+  "description": "AI-powered study tool for YouTube videos with quizzes, summaries, and spaced repetition",
+  
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "alarms",
+    "notifications"
+  ],
+  
+  "host_permissions": [
+    "https://*.youtube.com/*"
+  ],
+  
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Echo Learning Assistant"
+  },
+  
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/watch*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  
+  "background": {
+    "service_worker": "background.js"
+  },
+  
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/*"],
+      "matches": ["https://*.youtube.com/*"]
+    }
+  ]
+}
+
