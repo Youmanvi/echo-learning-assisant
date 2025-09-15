@@ -17,31 +17,31 @@
   ],
   
   "action": {
-    "default_popup": "popup.html",
+    "default_popup": "src/html/popup.html",
     "default_title": "Echo Learning Assistant"
   },
   
   "icons": {
-    "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
+    "16": "assets/icons/icon16.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
   },
   
   "content_scripts": [
     {
       "matches": ["https://www.youtube.com/watch*"],
-      "js": ["content.js"],
+      "js": ["src/js/content.js"],
       "run_at": "document_end"
     }
   ],
   
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "src/js/background.js"
   },
   
   "web_accessible_resources": [
     {
-      "resources": ["icons/*"],
+      "resources": ["assets/icons/*"],
       "matches": ["https://*.youtube.com/*"]
     }
   ]

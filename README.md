@@ -2,7 +2,30 @@
 
 Echo is an AI-powered Chrome extension that helps you learn from YouTube videos by creating interactive study materials including quizzes, summaries, and flashcards.
 
-## Features
+## 📁 Project Structure
+
+```
+echo-extension/
+├── manifest.json                 # Extension configuration (Manifest V3)
+├── README.md                    # This file
+├── src/                         # Source code directory
+│   ├── html/                    # HTML templates
+│   │   └── popup.html          # Main popup interface
+│   ├── css/                     # Stylesheets
+│   │   └── popup.css           # Main stylesheet with dark theme
+│   └── js/                      # JavaScript modules
+│       ├── popup.js            # Frontend logic and UI interactions
+│       ├── content.js          # YouTube page interaction script
+│       ├── background.js       # Service worker for storage and messaging
+│       └── ai.js              # AI core module for study material generation
+└── assets/                      # Static assets
+    └── icons/                  # Extension icons
+        ├── icon16.png          # 16x16 icon
+        ├── icon48.png          # 48x48 icon
+        └── icon128.png         # 128x128 icon
+```
+
+## 🚀 Features
 
 - **Video Library**: Save YouTube videos to your personal learning library
 - **AI-Generated Study Materials**: Automatically create summaries, key terms, and quizzes
@@ -11,7 +34,7 @@ Echo is an AI-powered Chrome extension that helps you learn from YouTube videos 
 - **Transcript Highlighting**: Highlight important parts of video transcripts
 - **Modern Dark UI**: Clean, modern interface optimized for learning
 
-## Installation
+## 🛠️ Installation
 
 1. Download or clone this repository
 2. Open Chrome and navigate to `chrome://extensions/`
@@ -19,7 +42,7 @@ Echo is an AI-powered Chrome extension that helps you learn from YouTube videos 
 4. Click "Load unpacked" and select the extension folder
 5. The Echo icon should appear in your Chrome toolbar
 
-## Usage
+## 📖 Usage
 
 ### Adding Videos to Your Library
 
@@ -36,49 +59,14 @@ Echo is an AI-powered Chrome extension that helps you learn from YouTube videos 
 5. Take the interactive quiz to test your knowledge
 6. Schedule reviews for spaced repetition learning
 
-### Features Overview
-
-- **Summary**: AI-generated comprehensive summary of the video content
-- **Key Terms**: Important concepts and terminology extracted from the video
-- **Quiz**: Interactive multiple-choice questions with explanations
-- **Progress Tracking**: Track your study sessions and performance
-- **Review Scheduling**: Set up spaced repetition for long-term retention
-
-## Technical Details
+## 🔧 Technical Details
 
 - **Manifest Version**: V3 (latest Chrome extension standard)
 - **APIs Used**: chrome.ai, chrome.storage.local, chrome.scripting, chrome.alarms, chrome.notifications
 - **Frontend**: Vanilla JavaScript (ES6 modules), HTML5, CSS3
 - **AI Integration**: Chrome's built-in AI API for content generation
 
-## File Structure
-
-```
-echo-extension/
-├── manifest.json          # Extension configuration
-├── popup.html            # Main UI interface
-├── popup.css             # Styling for the popup
-├── popup.js              # Frontend logic and UI interactions
-├── content.js            # YouTube page interaction script
-├── background.js         # Service worker for storage and messaging
-├── ai.js                 # AI core module for study material generation
-└── icons/                # Extension icons (placeholder paths)
-    ├── icon16.png
-    ├── icon48.png
-    └── icon128.png
-```
-
-## Development
-
-The extension is built with modern web technologies and follows Chrome extension best practices:
-
-- **Manifest V3**: Uses the latest Chrome extension standard
-- **Service Worker**: Background script handles storage and messaging
-- **Content Scripts**: Inject functionality into YouTube pages
-- **AI Integration**: Leverages Chrome's AI API for intelligent content generation
-- **Responsive Design**: Modern dark theme with smooth animations
-
-## Privacy
+## 🔒 Privacy
 
 Echo respects your privacy:
 - All data is stored locally on your device
@@ -86,11 +74,6 @@ Echo respects your privacy:
 - AI processing uses Chrome's built-in AI API
 - You have full control over your learning data
 
-## Contributing
-
-This is a complete, functional Chrome extension. Feel free to modify and extend it for your specific learning needs.
-
-## License
+## 📄 License
 
 This project is open source and available under the MIT License.
-

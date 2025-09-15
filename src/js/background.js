@@ -313,7 +313,7 @@ class EchoBackgroundService {
                 // Create notification
                 await chrome.notifications.create({
                     type: 'basic',
-                    iconUrl: 'icons/icon48.png',
+                    iconUrl: 'assets/icons/icon48.png',
                     title: 'Echo - Time to Review!',
                     message: `It's time to review "${video.title}"`,
                     buttons: [
